@@ -1,0 +1,78 @@
+use bd_bcp
+
+ALTER TABLE usuario ADD senhaC varbinary(MAX) NULL
+
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = '7140#Bcp|Py';
+
+CREATE CERTIFICATE Usuarios
+WITH SUBJECT = 'CertificadoUsuarios'
+
+create symmetric key sk_usuarios with algorithm = Triple_DES encryption 
+by certificate usuarios;
+
+Open Symmetric key sk_usuarios decryption by certificate usuarios;
+
+Update usuario set senhaC=encryptbykey(key_guid('sk_usuarios'),senha)
+
+select id,usuario, 
+convert(varchar, DECRYPTBYKEY(senhaC))  as senha
+from usuario
+
+#Backup masterKey 
+OPEN MASTER KEY DECRYPTION BY PASSWORD = '7140#Bcp|Py';
+BACKUP MASTER KEY TO FILE = 'c:\MarterKey' ENCRYPTION BY PASSWORD = '7140#Bcp|Py'; 
+
+#Inclusão
+INSERT INTO usuario(id,chave,visivel,senhaC) values(99999, 'testeC', 0, EncryptByKey(Key_GUID('sk_usuarios'), CONVERT(VARBINARY, 'senha')))
+
+Para quando dar um RESTORE na base usar isso para validar o MasterKey.
+
+OPEN MASTER KEY 
+    DECRYPTION BY PASSWORD = '7140#Bcp|Py';
+ALTER MASTER KEY 
+    DROP ENCRYPTION BY SERVICE MASTER KEY;
+ALTER MASTER KEY 
+    ADD ENCRYPTION BY SERVICE MASTER KEY;
+CLOSE MASTER KEY;
+GO
+
+#### SCRIPT PARA LIBERAR AS TABELAS COM O ROTOR EXECUÇÃO
+ALTER DATABASE bd_bcp
+SET ALLOW_SNAPSHOT_ISOLATION ON
+
+ALTER DATABASE bd_bcp SET READ_COMMITTED_SNAPSHOT ON;
+
+## SSL BCP ####
+- Montar arquivo de certificado
+$Java_HOME\bin>keytool -genkey -alias keybcp -keyalg RSA -keystore c:\sslbcp
+senha igual criptografia SQl Server = 7140#Bcp|Py
+
+- Alterar a porta no server.xml para 
+<Connector port="8080" enableLookups="false"
+           redirectPort="8443" />
+
+ - Descomentar a porta 8443, e colocar as tags
+ keystorePass="7140#Bcp|Py" keystoreFile="c:\sslbcp" 
+ 
+- No Arquivo web.xml colocar o código:
+<security-constraint>
+ <web-resource-collection>
+ <web-resource-name>Protected Context</web-resource-name>
+ <url-pattern>/*</url-pattern>
+ </web-resource-collection>
+ <!-- auth-constraint goes here if you requre authentication -->
+ <user-data-constraint>
+ <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+ </user-data-constraint>
+ </security-constraint>
+
+arquivo c:/sslbcp
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/iText-5.0.5.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/poi-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/joda-time-2.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-vfs-2.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jsch-0.1.41.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/zehon_file_transfer-1.1.6.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-net-3.3.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-email-1.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/infra2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/infra2web.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-fileupload-1.2.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/tika-core-1.5.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/juniversalchardet-1.0.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

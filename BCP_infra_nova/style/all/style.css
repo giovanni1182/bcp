@@ -1,0 +1,213 @@
+/* regras gerais */
+
+body {
+    font-family: arial, sans-serif;
+    font-size: 8pt;
+    background-color: d0d0d0;
+    margin: 10 10 10 10;
+}
+
+input {
+    font-size: 8pt;
+    border: 1px solid d0d0d0;
+}
+
+textarea {
+    font-family: arial, sans-serif;
+    font-size: 8pt;
+}
+
+select {
+	font-size: 8pt;
+}
+
+a.link {
+    text-decoration: none;
+    color: CC0000;
+}
+
+a.link:hover {
+    text-decoration: underline;
+}
+
+a.disabledlink {
+	text-decoration: none;
+	color: 808080;
+}
+
+a.button {
+    font-weight: bold;
+    text-decoration: none;
+    color: CC0000;    
+}
+
+a.button:hover {
+	color: FF0000;
+}
+
+a.disabledbutton {
+    font-weight: bold;
+    text-decoration: none;
+    color: 808080;
+}
+
+/* regras para o componente Table */
+
+table {
+	font-size: 8pt;
+}
+
+td {
+	vertical-align: top;
+}
+
+table.normal td.title {
+	font-size: 11pt;
+    font-weight: bold;
+    padding: 4 0 0 0;
+}
+
+table.normal td.subtitle, table.normal td.subtitle * {
+    text-decoration: underline;
+    font-weight: bold;
+    padding: 10 0 10 0;
+}
+
+table.normal td.footer {
+    padding: 10 0 0 0;
+}
+
+table.normal td.header {
+	padding: 1 1 1 1;
+    font-weight: bold;
+}
+
+table.normal td.data {
+	padding: 1 1 1 1;
+}
+
+table.normal tr.line1 {
+}
+
+table.normal tr.line2 {
+	background-color: f0f0f0;
+}
+
+/* regras para o componente Block */
+
+table.block {
+	border-collapse: collapse;
+}
+
+table.block td {
+	padding: 0 0 0 0;
+}
+
+/* regras para o componente MainTable */
+
+table.maintable {
+	border-collapse: collapse;
+}
+
+table.maintable td {
+	padding: 0 0 0 0;
+}
+
+table.maintitle td.title {
+	font-size: 10pt;
+    font-weight: bold;
+}
+
+/* regras para o componente Border */
+
+table.tborder {
+	border-collapse: collapse;
+}
+
+table.tborder td {
+	padding: 0 0 0 0;
+}
+
+table.tborder td.tborder-upleft {
+	background-image: url("images/upleft.gif");
+}
+
+table.tborder td.tborder-up {
+	background-image: url("images/up.gif");
+}
+
+table.tborder td.tborder-upright {
+	background-image: url("images/upright.gif");
+}
+
+table.tborder td.tborder-left {
+	background-image: url("images/left.gif");
+}
+
+table.tborder td.tborder-right {
+	background-image: url("images/right.gif");
+}
+
+table.tborder td.tborder-downleft {
+	background-image: url("images/downleft.gif");
+}
+
+table.tborder td.tborder-down {
+	background-image: url("images/down.gif");
+}
+
+table.tborder td.tborder-downright {
+	background-image: url("images/downright.gif");
+}
+
+table.tborder td.tborder_title, table.tborder td.tborder_title * {
+    font-weight: bold;
+    font-size: 10pt;
+	background-color: white;
+}
+
+table.tborder td.tborder_body {
+	background-color: white;
+}
+
+/* regras para o componente InputDate (calendar) */
+
+body.calendar {
+	margin: 0 0 0 0;
+}
+
+table.calendar {
+    font-size: 8pt;
+    background-color: f0f0f0;
+}
+
+table.calendarheader {
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: d0d0d0;
+}
+
+table.calendarheader td {
+    padding-bottom: 3;
+}
+
+table.calendarHeader a {
+    text-decoration: none;
+    color: black;
+}
+
+table.calendar a {
+    text-decoration: none;
+    color: black;
+}
+
+table.calendarfooter {
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: d0d0d0;
+}
+
+table.calendarfooter a {
+    text-decoration: none;
+    color: black;
+}
